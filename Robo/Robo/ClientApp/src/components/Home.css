@@ -65,6 +65,14 @@
 
 .arm {
     width: 30px;
+}
+
+.sholder {
+    width: 40px;
+}
+
+.arm,
+.sholder {
     height: 30px;
     background-color: #7fb3d5;
 }

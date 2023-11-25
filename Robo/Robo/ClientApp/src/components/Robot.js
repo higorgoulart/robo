@@ -111,7 +111,7 @@ export function Robot({ robo }) {
             <div className="neck"></div>
             <div className="body">
                 <div className="full-arm">
-                    <div className="arm"></div>
+                    <div className="sholder"></div>
                     <div className="elbow"></div>
                     <div className="arm" style={{
                          transform: renderCotovelo(robo.bracoEsquerdo.cotovelo, true)
@@ -125,7 +125,7 @@ export function Robot({ robo }) {
                 </div>
                 <div className="torso"></div>
                 <div className="full-arm">
-                    <div className="arm"></div>
+                    <div className="sholder"></div>
                     <div className="elbow"></div>
                     <div className="arm" style={{
                         transform: renderCotovelo(robo.bracoDireito.cotovelo, false)

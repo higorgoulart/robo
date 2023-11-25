@@ -16,8 +16,13 @@ public class Cabeca
     
     public void MovimentarRotacao(Rotacao rotacao)
     {
-        if (EnumUtils.DifferenceBetween(Rotacao, rotacao) > 1)
-            throw new MovimentacaoException();
+        switch (EnumUtils.DifferenceBetween(Rotacao, rotacao))
+        {
+            case > 1:
+                throw new MovimentacaoException();
+            case 0:
+                return;
+        }
         
         if (Inclinacao == Inclinacao.ParaBaixo)
             throw new BusinessException("Rotação não pode ser modificada enquanto inclinação estiver para baixo");
@@ -27,8 +32,13 @@ public class Cabeca
 
     public void MovimentarInclinacao(Inclinacao inclinacao)
     {
-        if (EnumUtils.DifferenceBetween(Inclinacao, inclinacao) > 1)
-            throw new MovimentacaoException();
+        switch (EnumUtils.DifferenceBetween(Inclinacao, inclinacao))
+        {
+            case > 1:
+                throw new MovimentacaoException();
+            case 0:
+                return;
+        }
 
         Inclinacao = inclinacao;
         

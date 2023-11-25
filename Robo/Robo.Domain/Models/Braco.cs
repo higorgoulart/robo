@@ -16,8 +16,13 @@ public class Braco
     
     public void MovimentarCotovelo(Cotovelo cotovelo)
     {
-        if (EnumUtils.DifferenceBetween(Cotovelo, cotovelo) > 1)
-            throw new MovimentacaoException();
+        switch (EnumUtils.DifferenceBetween(Cotovelo, cotovelo))
+        {
+            case > 1:
+                throw new MovimentacaoException();
+            case 0:
+                return;
+        }
         
         Cotovelo = cotovelo;
         
@@ -27,9 +32,14 @@ public class Braco
 
     public void MovimentarPulso(Pulso pulso)
     {
-        if (EnumUtils.DifferenceBetween(Pulso, pulso) > 1)
-            throw new MovimentacaoException();
-        
+        switch (EnumUtils.DifferenceBetween(Pulso, pulso))
+        {
+            case > 1:
+                throw new MovimentacaoException();
+            case 0:
+                return;
+        }
+
         if (Cotovelo != Cotovelo.FortementeContraido)
             throw new BusinessException("Pulso não pode ser modificada enquanto cotovelo não estiver fortemente contraído");
 

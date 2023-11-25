@@ -25,6 +25,16 @@ public class CabecaTest
     }
     
     [Fact(DisplayName = "Cabeça - Movimentar Inclinação")]
+    public void MovimentarInclinacao_NaoDeveMovimentar()
+    {
+        var cabeca = new Cabeca();
+        
+        cabeca.MovimentarInclinacao(Inclinacao.EmRepouso);
+        
+        Assert.Equal(Inclinacao.EmRepouso, cabeca.Inclinacao);
+    }
+    
+    [Fact(DisplayName = "Cabeça - Movimentar Inclinação")]
     public void MovimentarInclinacao_DeveLancarMovimentacaoException()
     {
         var cabeca = new Cabeca();
@@ -42,6 +52,16 @@ public class CabecaTest
         cabeca.MovimentarRotacao(Rotacao.Rotacao45);
         
         Assert.Equal(Rotacao.Rotacao45, cabeca.Rotacao);
+    }
+    
+    [Fact(DisplayName = "Cabeça - Movimentar Rotação")]
+    public void MovimentarRotacao_NaoDeveMovimentar()
+    {
+        var cabeca = new Cabeca();
+        
+        cabeca.MovimentarRotacao(Rotacao.EmRepouso);
+        
+        Assert.Equal(Rotacao.EmRepouso, cabeca.Rotacao);
     }
     
     [Fact(DisplayName = "Cabeça - Movimentar Rotação")]

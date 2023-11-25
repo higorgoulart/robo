@@ -15,6 +15,16 @@ public class BracoTest
     }
     
     [Fact(DisplayName = "Braço - Movimentar Cotovelo")]
+    public void MovimentarCotovelo_NaoDeveMovimentar()
+    {
+        var braco = new Braco();
+        
+        braco.MovimentarCotovelo(Cotovelo.EmRepouso);
+        
+        Assert.Equal(Cotovelo.EmRepouso, braco.Cotovelo);
+    }
+    
+    [Fact(DisplayName = "Braço - Movimentar Cotovelo")]
     public void MovimentarCotovelo_DeveMovimentar()
     {
         var braco = new Braco();
@@ -45,6 +55,17 @@ public class BracoTest
         
         Assert.Equal(Pulso.Rotacao45, braco.Pulso);
     }
+    
+    [Fact(DisplayName = "Braço - Movimentar Cotovelo")]
+    public void MovimentarPulso_NaoDeveMovimentar()
+    {
+        var braco = new Braco();
+        
+        braco.MovimentarPulso(Pulso.EmRepouso);
+        
+        Assert.Equal(Pulso.EmRepouso, braco.Pulso);
+    }
+
     
     [Fact(DisplayName = "Braço - Movimentar Pulso")]
     public void MovimentarPulso_DeveLancarMovimentacaoException()

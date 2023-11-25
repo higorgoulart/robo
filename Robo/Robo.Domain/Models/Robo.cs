@@ -37,8 +37,6 @@ public class Robo
             case Movimento.PulsoDireito:
                 BracoDireito.MovimentarPulso(valor.ToEnum<Pulso>());
                 break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(movimento), movimento, null);
         }
     }
 }
